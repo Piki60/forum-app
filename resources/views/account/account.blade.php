@@ -23,7 +23,19 @@
         </form>
     </div>
 
-    <!--TODO ajouter les blogs de l'utilisateur-->
+    <div>
+        <h2>Mes blogs</h2>
+        <a href="{{ route('blog.create') }}">
+            <button>Créer un blog</button>
+        </a>
+        <ul>
+            @foreach($blogs as $blog)
+                <li>
+                    {{ $blog->title }}</a>
+                </li>
+            @endforeach
+        </ul>
+    </div>
 </body>
 </html>
 

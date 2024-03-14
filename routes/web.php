@@ -3,6 +3,7 @@
 use App\Http\Controllers\AccountController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,4 +35,8 @@ Route::post('/deconnexion', [AuthenticationController::class, 'logout'])->name('
 Route::get('/mon-compte', [AccountController::class, 'index'])->name('account');
 Route::get('/mon-compte/modifier', [AccountController::class, 'edit'])->name('account.edit');
 Route::post('/mon-compte/modifier', [AccountController::class, 'update'])->name('account.update');
+
+/*---Blog---*/
+Route::get('/creer-un-blog', [BlogController::class, 'index'])->name('blog');
+Route::post('/creer-un-blog', [BlogController::class, 'create'])->name('blog.create');
 

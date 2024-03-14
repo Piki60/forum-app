@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Blog;
 
 use Illuminate\Http\Request;
 
@@ -12,7 +13,8 @@ class AccountController extends Controller
     {
         //retourner la vue du compte utilisateur
         return view('account.account', [
-            'user' => User::find(auth()->id())
+            'user' => User::find(auth()->id()),
+            'blogs' => Blog::where('user_id', auth()->id())->get()
         ]);
     }
 
